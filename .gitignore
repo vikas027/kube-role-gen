@@ -1,2 +1,7 @@
 .vscode
 dist/
+
+## Generated Files
+role_base.yaml
+role_merged.yaml
+kube-role-gen-*

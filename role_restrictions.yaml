@@ -1,0 +1,38 @@
+---
+# Example file of how restrictions will look like
+# export RESTRICTIONS=role_restrictions.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: restrictions
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - pods/exec
+  verbs:
+  - get
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - metrics.k8s.io
+  resources:
+  - nodes
+  - bindings
+  verbs:
+  - get
